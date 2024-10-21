@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+   <title>Datos de Alumno</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center; /* Centra horizontalmente */
+            align-items: center; /* Centra verticalmente */
+            height: 100vh; /* Altura del 100% de la ventana */
+            margin: 0; /* Elimina el margen predeterminado */
+            background-color: #e9ecef; /* Color de fondo suave */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Tipografía */
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px; /* Espaciado inferior */
+            color: #343a40; /* Color del texto */
+        }
+        form {
+            background-color: #ffffff; /* Fondo blanco para el formulario */
+            border-radius: 10px; /* Bordes redondeados */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra para el formulario */
+            padding: 30px; /* Espaciado interno */
+            width: 350px; /* Ancho del formulario */
+            transition: transform 0.2s; /* Transición suave al hacer hover */
+        }
+        form:hover {
+            transform: scale(1.02); /* Efecto de aumento al hacer hover */
+        }
+        label {
+            margin-top: 15px; /* Espaciado superior */
+            display: block; /* Cada etiqueta en una nueva línea */
+            font-weight: 600; /* Negrita para las etiquetas */
+            color: #495057; /* Color de las etiquetas */
+        }
+        input[type="text"] {
+            width: 100%; /* Ancho completo */
+            padding: 12px; /* Espaciado interno */
+            margin: 8px 0 20px 0; /* Espaciado alrededor */
+            border: 1px solid #ced4da; /* Borde gris claro */
+            border-radius: 6px; /* Bordes redondeados para los inputs */
+            background-color: #f8f9fa; /* Color de fondo suave para los inputs */
+            font-size: 16px; /* Tamaño de fuente */
+            transition: border-color 0.2s; /* Transición suave para el borde */
+        }
+        input[type="text"]:focus {
+            border-color: #80bdff; /* Color del borde al hacer focus */
+            outline: none; /* Elimina el borde azul predeterminado */
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra al hacer focus */
+        }
+         .btn-regresar {
+            display: block; /* Centra el botón */
+            width: 100%; /* Ancho completo del botón */
+            padding: 10px; /* Espaciado interno */
+            margin-top: 20px; /* Espaciado superior */
+            background-color: #007bff; /* Color de fondo azul */
+            color: white; /* Color del texto */
+            border: none; /* Sin borde */
+            border-radius: 6px; /* Bordes redondeados */
+            font-size: 16px; /* Tamaño de fuente */
+            cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+            text-align: center; /* Centra el texto */
+            text-decoration: none; /* Elimina subrayado */
+            transition: background-color 0.3s; /* Transición suave para el fondo */
+        }
+        .btn-regresar:hover {
+            background-color: #0056b3; /* Color más oscuro al hacer hover */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Datos de Alumno</h1>
+        <form>
+            <label for="codigo">Código:</label>
+            <input type="text" id="codigo" th:value="${alumno.codigo}" readonly>
+            
+            <label for="nombres">Nombres:</label>
+            <input type="text" id="nombres" th:value="${alumno.nombres}" readonly>
+            
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" id="apellidos" th:value="${alumno.apellidos}" readonly>
+            
+            <label for="carrera">Carrera:</label>
+            <input type="text" id="carrera" th:value="${alumno.carrera}" readonly>
+            
+            <label for="ciclo">Ciclo:</label>
+            <input type="text" id="ciclo" th:value="${alumno.ciclo}" readonly>
+            
+            <!-- Botón de regresar -->
+            <a href="http://localhost:8080/buscar" class="btn-regresar">Regresar</a> <!-- Cambia "tu-url-aqui" por la ruta deseada -->
+      
+        </form>
+    </div>
+</body>
+</html>
